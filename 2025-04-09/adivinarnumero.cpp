@@ -1,31 +1,42 @@
 /*
-juego de adivinar un numero
+Juego de adivinar un numero
 
-tener un numero
-preguntar el numero
-informar si lo adivina o nols
+Tener un numero
+Preguntar al usuario el numero
+Informar si lo adivino o no
+
 */
 
 #include <iostream>
 
 int main(void) {
-    const int NUM = 10;
-    int guessed_number;
-    for(;;) {
-    std::cout <<"Adivina numero entre 1 y 100:\n";
-    std::cin >> guessed_number;
 
-    if (guessed_number == NUM){
-        std::cout <<"GANASTE!!!\n";
-        break;
-    } else if (guessed_number > NUM){
-        std::cout <<"Te pasaste.\n";
-    }  else { 
-        std::cout <<"Te falta.\n";
-    }  
- }
-    
+    const int NUM = 10;
+    int guessed_number = NUM/2;
+
+    const int MIN = 1;
+    const int MAX = 100;
+
+    while(guessed_number != NUM) {
+        std::cout << "Adivina un numero entre 1 y 100:\n";
+        std::cin >> guessed_number;
+        std::cout << "Ecribiste: " << guessed_number << "\n";
+
+        // validacion del rango 
+        if (guessed_number < MIN or MAX < guessed_number) {
+            std::cout << "El numero no esta en el rango.\n";
+            continue; 
+        }
+
+        if (guessed_number == NUM) {
+            std::cout << "GANASTE!!!!\n";
+            //break;
+        } else if (guessed_number > NUM){
+            std::cout << "Te pasaste.\n";
+        } else { // es menor
+            std::cout << "Te falta.\n";
+        }
+    }
 
     return 0;
-
 }
