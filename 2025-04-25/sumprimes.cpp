@@ -1,16 +1,17 @@
 #include <iostream>
 #include <cmath>
-#include "primes_util.h"
+#include "prime_utils.h"
+
+void test(void);
 
 int main(void){
-
     long suma = 0;
-    for(int ii = 500; ii <= 1234; ++ii) {
+    for(int ii = 500;ii <= 1234; ++ii) {
         if (isprime(ii) == true) {
-            suma += ii;    
+           suma += ii;   
         }
     }
-    std::cout << suma << "\n";
-
+std::cout << suma << "\n";
     return 0;
 }
+

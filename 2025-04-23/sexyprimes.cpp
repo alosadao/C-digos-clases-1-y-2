@@ -1,10 +1,24 @@
 #include <iostream>
-#include "primes_util.h"
-
+#include <cmath>
+#include <string>
 // declaration
-
+bool isprime(long n);
 void test(void);
 
+int main(int argc, char **argv){
+
+    // ./a.out 300 400 -> argc = 3, argv = [""./a.out", "300", "400"]
+    int vmin = std::stoi(argv[1]);
+    int vmax = std::stoi(argv[2]);
+
+    for(int ii = vmin; ii <= vmax-4; ++ii) {
+        if (isprime(ii) == true and isprime(ii+6) == true){
+            std::cout << "(" << ii << ", " << ii+6 << ")" << "\n";    
+        }
+    }
+
+    return 0;
+}
 
 // implementation
 bool isprime(long n) {

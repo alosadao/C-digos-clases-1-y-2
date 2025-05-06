@@ -2,7 +2,7 @@
 #include <cmath>
 
 // declaration
-bool isprime(int n);
+bool isprime(long n);
 void test(void);
 
 int main(void){
